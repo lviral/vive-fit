@@ -1,0 +1,114 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../bower_components/iron-icons/editor-icons.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-swipeable-container/iron-swipeable-container.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view3">
+  <template>
+      <style include="shared-styles">
+        :host {
+          display: block;  
+            height: 90%;
+            width: 95%;
+            margin: 0 auto;
+        }
+          iron-image {
+              width: 100%;
+              height: 85%;
+          }
+          iron-swipeable-container{
+              height: 100%;
+          }
+          paper-fab {
+            float: right;
+            bottom: 35px;
+            right: 45px;
+            background-color: var(--app-primary-color);
+          }
+        paper-material {
+            height: 85%;
+            width: 100%;
+            margin-top: 20px;
+            background-color: var(--app-secondary-color);
+            color: var(--app-primary-color);
+        }
+          paper-material .datosPersonales {
+              margin-left: 10px;
+          }
+          paper-material .datosPersonales .edad{
+              font-size: smaller;
+          }
+          .iconActions {
+            float: left;
+            bottom: 60px;
+            position: absolute;
+          }
+      </style>
+      
+     <iron-swipeable-container swipe-style="curve">
+          <template is="dom-repeat" items="[[items]]">
+              <paper-material elevation="5">
+                  
+                  <iron-image src="https://s-media-cache-ak0.pinimg.com/736x/09/5f/18/095f18879183640131b47cd79909f459.jpg"
+                              sizing="cover"></iron-image>
+                  
+                  
+                  <paper-fab icon="social:whatshot"></paper-fab>
+                  <div class="iconActions">
+                      <paper-icon-button icon="record-voice-over"></paper-icon-button>
+                      <paper-icon-button icon="av:videocam"></paper-icon-button>
+                      <paper-icon-button icon="editor:format-quote"></paper-icon-button>
+                  </div>
+                  <div class="datosPersonales">
+                      <div class="nombre">Melanie Martinez</div>
+                      <div class="edad">22 años</div>
+                  </div>
+                  
+                  
+                  
+                  
+              </paper-material>
+              
+          </template>
+     </iron-swipeable-container>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view3',
+      properties : {
+         items: {
+              type: Array,
+              value: function() {
+                return [1,2,3,1,1,1,1,1,1,1,1,1];
+              }
+            }
+      },
+      _onSwipe: function(e) {
+        var card = e.detail.target;
+        console.log(card.getAttribute('data-index'));
+
+        // simpler syntax to get 'data-index'
+        console.log(card.dataset.index);
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,110 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view1">
+  <template>
+      <style include="shared-styles">
+        :host {
+          display: block;
+          width: 100%;
+        }
+          paper-button {
+              background-color: var(--app-secondary-color);
+              color: var(--app-primary-color);
+          }
+        paper-card {
+          width: 100%;
+          height: 150px;
+            margin: 0 auto;
+        }
+          
+          iron-image {
+              margin-top: -2px;
+          }
+          
+          td {
+             vertical-align: top;
+          }
+          .descripcion {
+              width: 80%;
+          }
+          .imagen {
+              width: 20%;
+          }
+          
+          paper-button {
+              float: right;
+              padding: 5px;
+          }
+          
+          .title {
+              font-size: larger;
+              font-weight: bold;
+          }
+          
+          .description {
+              font-size: smaller;
+          }
+          
+          .precio {
+             text-align: right;
+              padding: 5px;
+              font-size: larger;
+              font-weight: bolder;
+              color: var(--app-primary-color);
+          }
+          
+      </style>
+      
+     <template is="dom-repeat" items="[[items]]">
+         <paper-card elevation="1">
+             <table>
+                 <tr>
+                    <td class="imagen">
+                        <iron-image height="149" width="100" sizing="cover" src="http://scontent.cdninstagram.com/t51.2885-15/s480x480/e35/11349273_709505832526752_656716186_n.jpg?ig_cache_key=MTA5Mzc3MjAyNzMxOTU3Njk4OA%3D%3D.2">
+                        </iron-image>
+                    </td>
+                    <td class="descripcion">
+                        <div class="title">Sapri Run</div>
+                        <div class="description">
+                            Tibas Centro
+                            <br>
+                            12/02/2017
+                        </div>
+                        <div class="precio">$25</div>
+                        <div class="buttons"><paper-button>Go</paper-button></div>
+                     </td>
+                 </tr>
+             </table>
+         </paper-card>
+      </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view1',
+      properties : {
+          items: {
+              type: Array,
+              value: function() {
+                return [1,2,3,1,1,1,1,1,1,1,1,1];
+              }
+            }
+      }
+    });
+  </script>
+</dom-module>
