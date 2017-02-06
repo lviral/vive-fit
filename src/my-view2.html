@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view2">
@@ -18,10 +20,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
 
         padding: 10px;
+        margin-top: -25px;
+        margin-bottom: 60px;
+      }
+      paper-material {
+        width: 125px;
+        height: 150px;
+        display: inline-block;
+        background-color: #FFF;
+        border-radius: 5px;
+        margin-left: 15px; 
+      }
+      iron-image {
+        width: 50%;
+        height: 50%;
+        margin: 20px auto;
+        display: block;
+        /*margin-top: 20px;*/
+        border-radius: 50px;
+      }
+      .name {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        color: var(--app-primary-color);
+      }
+      h2 {
+        color: var(--app-primary-color);
       }
     </style>
 
-   grupos
+   <h2>Pareja</h2>
+   <paper-material elevation="3">
+     <iron-image sizing="cover" src="http://i.dailymail.co.uk/i/pix/2015/09/29/17/2CE7383800000578-0-image-a-61_1443545133032.jpg"></iron-image>
+     <div class="name">@brandonlee</div>
+   </paper-material>
+
+   <h2>Grupos</h2>
+   <paper-material elevation="3">
+     <iron-image sizing="cover" src="http://locosporcorrer.com/web/wp-content/uploads/2015/08/Correr-felicidad-endorfina-locos-por-correr-01.jpg"></iron-image>
+     <div class="name">@runners</div>
+   </paper-material>
+   <paper-material elevation="3">
+     <iron-image sizing="cover" src="http://www.longfordsgym.co.uk/blog/wp-content/uploads/2013/04/1-Home-page.jpg"></iron-image>
+     <div class="name">@gympeople</div>
+   </paper-material>
+
+   <h2>Amigos</h2>
+   <paper-material elevation="3">
+     <iron-image sizing="cover" src="http://www2.pictures.gi.zimbio.com/Jade+Puget+2006+MTV+Video+Music+Awards+Arrivals+iSOrKfLeUTpl.jpg"></iron-image>
+     <div class="name">@jadepuget</div>
+   </paper-material>
+   <paper-material elevation="3">
+     <iron-image sizing="cover" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjIzNzIxMjI0MF5BMl5BanBnXkFtZTcwODk3NDA5Mg@@._V1_UY317_CR4,0,214,317_AL_.jpg"></iron-image>
+     <div class="name">@taylormonsen</div>
+   </paper-material>
+
+   
   </template>
 
   <script>

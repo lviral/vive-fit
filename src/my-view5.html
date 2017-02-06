@@ -1,38 +1,109 @@
 <!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
+    @license
+    Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+    -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../bower_components/iron-icons/editor-icons.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/paper-card/paper-card.html">
-
+<link rel="import" href="../bower_components/paper-chip/paper-chip.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="shared-styles.html">
-
 <dom-module id="my-view5">
-  <template>
-      <style include="shared-styles">
-        :host {
-          display: block;
-          width: 100%;
-        }
-         
-      </style>
-      profile
-     
-  </template>
+    <template>
+        <style include="shared-styles">
+            :host {
+              display: block;  
+              height: 90%;
+              width: 100%;
+              margin: 0 auto;
+            }
+            iron-image {
+              width: 100%;
+              height: 75%;
+            }
+            .goFab {
+              float: right;
+              bottom: 35px;
+              right: 45px;
+              background-color: var(--app-primary-color);
+            }
+            paper-material {
+              height: 60%;
+              width: 100%;
+              /*margin-top: 20px;*/
+              background-color: var(--app-secondary-color);
+              color: var(--app-primary-color);
+              margin-top: -64px;
+            }
+            paper-material .datosPersonales {
+              margin-left: 10px;
+              font-size: smaller;
+            }
+            .fabAdd {
+              position: fixed;
+              bottom: 60px;
+              right: 25px;
+              background-color: var(--app-primary-color);
+            }
+            .tag {
+              background-color: var(--app-primary-color);
+              padding: 10px;
+              border-radius: 20px;
+              margin: 10px;
+              display: inline-block;
+            }
+            .tagContainer {
+              width: 90%;
+              margin: 0 auto;
+              margin-top: 30px;
+            }
+        </style>
+        <paper-material elevation="5">
+            <iron-image src="https://s-media-cache-ak0.pinimg.com/736x/09/5f/18/095f18879183640131b47cd79909f459.jpg"
+                sizing="conver" position="top"></iron-image>
+            <paper-fab class="goFab" icon="social:whatshot"></paper-fab>
+            
+            <div class="datosPersonales">
+                <div class="iconActions">
+                  <paper-icon-button icon="record-voice-over"></paper-icon-button>
+                  <paper-icon-button icon="av:videocam"></paper-icon-button>
+                  <paper-icon-button icon="editor:format-quote"></paper-icon-button>
+                </div>
+                <div class="nombre">Melanie Martinez - <span class="edad">22 años</span></div>
+                
+            </div>
+        </paper-material>
 
-  <script>
-    Polymer({
-      is: 'my-view5',
-      properties : {
-      }
-    });
-  </script>
+        <div class="tagContainer">
+          <span class="tag">Baloncesto</span>
+          <span class="tag">Astronomía</span>
+          <span class="tag">Playa</span>
+          <span class="tag">Viajar</span>
+          <span class="tag">Correr</span>
+          <span class="tag">Futbol</span>
+          <span class="tag">Amigos</span>
+          <span class="tag">Heredia</span>
+          <span class="tag">Ajedrez</span>
+        </div>
+        <paper-fab class="fabAdd" icon="add"></paper-fab>
+    </template>
+    <script>
+        Polymer({
+          is: 'my-view5',
+          properties : {
+             
+          },
+         
+        });
+    </script>
 </dom-module>
