@@ -21,7 +21,8 @@
     "expandable-card": "expandable-card-container#^0.1.0",
     "paper-menu-hidable": "lviral/paper-menu-hidable",
     "paper-fab": "PolymerElements/paper-fab#^1.2.1",
-    "paper-chip": "bendavis78/paper-chip#^1.1.2"
+    "paper-chip": "bendavis78/paper-chip#^1.1.2",
+    "random-image": "kilombo/random-image#^0.1.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
